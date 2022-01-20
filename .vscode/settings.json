@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/4af9dde5-23d2-44b7-aa81-f81d0d560493/resourceGroups/minhconan/providers/Microsoft.Web/sites/minhconan",
+    "appService.deploySubpath": "."
+}
