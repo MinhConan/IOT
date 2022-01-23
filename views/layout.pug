@@ -6,31 +6,27 @@ html
   body
     h1 Video Streaming
     block content
-    div#list
-      a(href="/video/1")#item_1 video 1
-      a(href="/video/2")#item_2 video 2
-      a(href="/video/3")#item_3 video 3
 
-//- script(src='../javascripts/index.js')
 script(src="https://cdn.jsdelivr.net/npm/hls.js@latest")
 script.
   var video = document.getElementById('video');
-  var video_id = #{id};
-  for (var i = 1; i <= 3; i++){
-    if (video_id == i) {
-      document.getElementById(`item_${i}`).classList.add('active');
+  video.controls = true;
+  console.log(id)
+  var id = #{id};
+  for (var i = 1; i <= 3; i++) {
+    if (i === id) {
+      document.getElementById(`video_${id}`).classList.add('active')
     }
     else {
-      document.getElementById(`item_${i}`).classList.remove('active');
+      document.getElementById(`video_${i}`).classList.remove('active')
     }
   }
-  video.controls = true;
-  var videoSrc = `../data/m3u8/video${video_id}/video${video_id}_.m3u8`;
+  var videoSrc = `../data/m3u8/video_${id}/video_${id}.m3u8`;
   if(Hls.isSupported()) {
     var hls = new Hls();
     hls.loadSource(videoSrc);
     hls.attachMedia(video);
-  }
+ }
   else if (video.canPlayType('application/vnd.apple.mpegurl')) {
     video.src = video;
     video.addEventListener('canplay',function() {

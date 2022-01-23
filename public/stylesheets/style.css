@@ -27,3 +27,7 @@ h1 {
   background-color: aqua !important;
   color: #fff !important;
 }
+
+#video {
+  width: 720px;
+}
