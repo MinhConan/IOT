@@ -7,6 +7,7 @@ var logger = require('morgan');
 var videoRouter = require('./routes/video');
 var homeRouter = require('./routes/home');
 var dataRouter = require('./routes/data');
+var houseRouter = require('./routes/house');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.all('/', function(req, res, next) {
 app.use('/video', videoRouter);
 app.use('/', homeRouter);
 app.use('/data', dataRouter);
+app.use('/in-house', houseRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

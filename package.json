@@ -12,7 +12,8 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11",
+    "mqtt": "^4.3.4",
+    "pug": "^2.0.4",
     "videojs-hls-quality-selector": "^1.1.4"
   }
 }
